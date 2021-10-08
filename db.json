@@ -1,0 +1,60 @@
+{
+  "accountRegister": [
+    {
+      "name": "dat",
+      "email": "dat1@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 2
+    },
+    {
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 3
+    },
+    {
+      "name": "datkute",
+      "email": "datkute@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 4
+    },
+    {
+      "name": "dat01",
+      "email": "dat1@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 5
+    },
+    {
+      "name": "datee",
+      "email": "duydat@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 6
+    },
+    {
+      "name": "duc",
+      "email": "cuduc@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 7
+    },
+    {
+      "name": "duc",
+      "email": "ducsuthay@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 8
+    },
+    {
+      "name": "ddd",
+      "email": "dat@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 9
+    }
+  ]
+}
