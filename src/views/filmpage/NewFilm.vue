@@ -33,7 +33,7 @@ export default {
       nameFilm: "",
       user: {},
       currentPage: 1,
-      totalPages: 1000
+      totalPages: 100
     };
   },
 
@@ -51,8 +51,6 @@ export default {
       this.$router.push(`/detail-film/${index}`);
     }
   },
-  // get email, password từ localStorage xem có trùng vs tài khoản đang login hay kh?
-  // Nếu đúng thì lưu vào localStorage và giữ trạng thái logged và refresh kh mất
   created() {
     this.callApiGetFilms({ page: this.currentPage });
     //nhận value input từ Header và hứng vào biến nameFilm
@@ -67,8 +65,6 @@ export default {
 
     filterNameFilm() {
       return this.getListFilm.filter(film => {
-        // console.log(this.nameFilm)
-        // console.log(film.title.toLowerCase().includes(this.nameFilm.toLowerCase()))
         return film.title
           .toLowerCase()
           .replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, "")

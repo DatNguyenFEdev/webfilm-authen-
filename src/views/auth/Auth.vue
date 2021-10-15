@@ -13,10 +13,10 @@
           @keypress.enter="handleSubmitFormLogin()"
         >
           <div class="form-group">
-            <input type="email" placeholder="Email hoặc số điện thoại" v-model="loginForm.email" />
+            <input type="email" placeholder="Email hoặc số điện thoại" v-model="loginForm.email" required />
           </div>
           <div class="form-group">
-            <input type="password" placeholder="Mật khẩu" v-model="loginForm.password" />
+            <input type="password" placeholder="Mật khẩu" v-model="loginForm.password" required/>
           </div>
           <div class="form-group">
             <div>
@@ -49,13 +49,13 @@
           @keypress.enter="handleSubmitFormRegister()"
         >
           <div class="form-group">
-            <input type="text" placeholder="Name" v-model="registerForm.name" />
+            <input type="text" placeholder="Name" v-model="registerForm.name" required />
           </div>
           <div class="form-group">
-            <input type="email" placeholder="Email hoặc số điện thoại" v-model="registerForm.email" />
+            <input type="email" placeholder="Email hoặc số điện thoại" v-model="registerForm.email" required/>
           </div>
           <div class="form-group">
-            <input type="password" placeholder="Mật khẩu" v-model="registerForm.password" />
+            <input type="password" placeholder="Mật khẩu" v-model="registerForm.password" required/>
           </div>
           <div class="form-group">
             <input

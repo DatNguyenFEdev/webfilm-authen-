@@ -55,6 +55,34 @@
       "password": "1234",
       "confirmPassword": "1234",
       "id": 9
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": 10
+    },
+    {
+      "name": "a",
+      "email": "a@gmail.com",
+      "password": "1",
+      "confirmPassword": "1",
+      "id": 11
+    },
+    {
+      "name": "datnguyen123",
+      "email": "datnguyen123@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 12
+    },
+    {
+      "name": "datnguyen123",
+      "email": "datnguyen123@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 13
     }
   ]
 }
