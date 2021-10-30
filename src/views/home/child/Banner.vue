@@ -31,8 +31,10 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     height: 817px;
+    width: 100%;
     text-align:center;
     position: relative;
+    /* overflow: hidden; */
 }
 .bg-gradient {
     position: absolute;

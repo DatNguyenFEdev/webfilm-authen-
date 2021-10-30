@@ -83,6 +83,27 @@
       "password": "123",
       "confirmPassword": "123",
       "id": 13
+    },
+    {
+      "name": "nguyen",
+      "email": "duydat33@gmail.com",
+      "password": "009",
+      "confirmPassword": "009",
+      "id": 14
+    },
+    {
+      "name": "duc",
+      "email": "meme@gmail.com",
+      "password": "meme",
+      "confirmPassword": "meme",
+      "id": 15
+    },
+    {
+      "name": "duc",
+      "email": "meme@gmail.com",
+      "password": "meme",
+      "confirmPassword": "meme",
+      "id": 16
     }
   ]
 }
