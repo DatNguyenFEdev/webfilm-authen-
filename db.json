@@ -104,6 +104,20 @@
       "password": "meme",
       "confirmPassword": "meme",
       "id": 16
+    },
+    {
+      "name": "ass",
+      "email": "ass@gmail.com",
+      "password": "",
+      "confirmPassword": "",
+      "id": 17
+    },
+    {
+      "name": "ass",
+      "email": "ass@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 18
     }
   ]
 }
