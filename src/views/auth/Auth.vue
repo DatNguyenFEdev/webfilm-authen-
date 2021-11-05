@@ -13,10 +13,15 @@
           @keypress.enter="handleSubmitFormLogin()"
         >
           <div class="form-group">
-            <input type="email" placeholder="Email hoặc số điện thoại" v-model="loginForm.email" required />
+            <input
+              type="email"
+              placeholder="Email hoặc số điện thoại"
+              v-model="loginForm.email"
+              required
+            />
           </div>
           <div class="form-group">
-            <input type="password" placeholder="Mật khẩu" v-model="loginForm.password" required/>
+            <input type="password" placeholder="Mật khẩu" v-model="loginForm.password" required />
           </div>
           <div class="form-group">
             <div>
@@ -37,25 +42,28 @@
         </form>
       </div>
     </div>
+    <!-- register form -->
     <div id="register" v-else>
       <div class="register-form handleForm" :class="{openForm: showForm}">
         <button class="btn-close">
           <i class="fas fa-times" @click="toggle()"></i>
         </button>
         <h1>Register</h1>
-        <form
-          action="#"
-          @submit.prevent="handleSubmitFormRegister()"
-          @keypress.enter="handleSubmitFormRegister()"
-        >
+        <form @submit.prevent="handleSubmitFormRegister">
+          <!-- @keypress.enter="handleSubmitFormRegister()" -->
           <div class="form-group">
             <input type="text" placeholder="Name" v-model="registerForm.name" required />
           </div>
           <div class="form-group">
-            <input type="email" placeholder="Email hoặc số điện thoại" v-model="registerForm.email" required/>
+            <input
+              type="email"
+              placeholder="Email hoặc số điện thoại"
+              v-model="registerForm.email"
+              required
+            />
           </div>
           <div class="form-group">
-            <input type="password" placeholder="Mật khẩu" v-model="registerForm.password" required/>
+            <input type="password" placeholder="Mật khẩu" v-model="registerForm.password" required />
           </div>
           <div class="form-group">
             <input
@@ -64,7 +72,7 @@
               v-model="registerForm.confirmPassword"
             />
           </div>
-          <input type="submit" value="Đăng kí" />
+          <button type="submit">Đăng kí</button>
           <p>
             Have an account?
             <span @click="isLogin=true">Login</span>
@@ -76,11 +84,12 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { USER_INFOR } from "@/constants";
+import { mapGetters, mapActions } from "vuex";
+import { register, login } from "@/services/auth.js";
 
 export default {
   props: ["showForm"],
+
   data() {
     return {
       isLogin: true,
@@ -103,32 +112,22 @@ export default {
   },
 
   methods: {
-    ...mapActions(["login", "register"]),
+    ...mapActions(["setIsLogged"]),
     // close/ open form login/register
     toggle() {
-      this.showForm = false
+      this.showForm = false;
       this.$emit("changeForm", this.showForm);
     },
-    // lưu thông tin ng dùng đăng kí vào json server
+
     async handleSubmitFormRegister() {
-      await this.register(this.registerForm);
-      this.isLogin = true;
+      await register(this.registerForm);
+      // this.isLogin = true;
+      this.setIsLogged(true);
     },
-    // so sánh thông tin ng dùng nhập từ form login vs thông tin những accountRegister
-    //Nếu trùng ok=> login
-    //Nếu kh hiển thị thông báo sai tài khoản, mật khẩu
+
     async handleSubmitFormLogin() {
-      await this.login(this.loginForm);
-
-      if (!this.getIsLogged) return alert("Tài khoản hoặc mật khẩu không đúng");
-
-      localStorage.setItem(
-        USER_INFOR,
-        JSON.stringify({
-          email: this.loginForm.email,
-          password: this.loginForm.password
-        })
-      );
+      await login(this.loginForm);
+      this.setIsLogged(true);
     }
   }
 };
