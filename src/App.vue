@@ -5,8 +5,21 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+import {TOKEN} from "@/constants"
 export default {
-};
+  methods: {
+    ...mapActions(["login", "setIsLogged"])
+  },
+  created() {
+    if(localStorage.getItem(`${TOKEN}`)===null) {
+      this.setIsLogged(false)
+    }
+    else {
+      this.setIsLogged(true)
+    }
+}
+}
 </script>
 
 <style>

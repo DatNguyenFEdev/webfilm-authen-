@@ -18,7 +18,6 @@ import Banner from "./child/Banner";
 import NewFilm from "../filmpage/NewFilm"; 
 
 import { mapGetters } from "vuex";
-import { TOKEN } from "@/constants";
 import { mapActions } from "vuex";
 
 export default {
@@ -33,22 +32,6 @@ export default {
     NewFilm,
     // Loading,
     Footer
-  },
-    async created() {
-    // const user = JSON.parse(localStorage.getItem(TOKEN));
-    if(localStorage.getItem(`${TOKEN}`)===null) {
-      this.setIsLogged(false)
-    }
-    else {
-      this.setIsLogged(true)
-    }
-    // if(!user) {
-    //   this.loading = true;
-    //   this.setIsLogged(false);
-    // }
-    // else {
-    //   this.setIsLogged(true)
-    // }
   },
   methods: {
     ...mapActions(["login", "setIsLogged"])
