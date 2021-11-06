@@ -114,7 +114,7 @@
 <script>
 import Auth from "@/views/auth/Auth";
 import { mapGetters, mapActions } from "vuex";
-import { USER_INFOR } from "@/constants";
+import { TOKEN } from "@/constants";
 
 export default {
   data() {
@@ -149,9 +149,8 @@ export default {
     // chức năng logout, xoá trong localStorage và refresh lại trang
     logout() {
       this.setIsLogged(false);
-      localStorage.removeItem(USER_INFOR);
+      localStorage.removeItem(TOKEN);
       this.$router.push({ name: "Home" });
-      // location.reload();
     }
   }
 };

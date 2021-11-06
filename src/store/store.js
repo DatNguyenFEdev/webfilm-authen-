@@ -53,17 +53,5 @@ export default new Vuex.Store({
     async setIsLogged({ commit }, payload) {
       commit("setIsLogged", payload);
     },
-
-    async login(context, user) {
-      const res = await axios.get("http://localhost:3000/accountRegister");
-      const checkLogged = res.data.find((inforUser) => {
-        return inforUser.email === user.email && inforUser.password === user.password;
-      });
-      context.commit("setIsLogged", checkLogged !== undefined);
-    },
-
-    async register(_, user) {
-      await axios.post("http://localhost:3000/accountRegister", user);
-    },
   },
 });

@@ -34,7 +34,6 @@ const auth = getAuth(firebaseApp);
 //   } else {
 //   }
 // });
-
 export async function register(user) {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, user.email, user.password);
@@ -43,12 +42,13 @@ export async function register(user) {
         alert(error.message);
     }
 }
-
 export async function login(user) {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, user.email, user.password);
         localStorage.setItem(TOKEN, userCredential.user.accessToken);
-    } catch (error) {
-        alert(error.message);
+    } 
+    catch (error) {
+        alert("Sai tài khoản hoặc mật khẩu")
+        this.$store.getters.setIsLogged(false)
     }
 }

@@ -18,7 +18,7 @@ import Banner from "./child/Banner";
 import NewFilm from "../filmpage/NewFilm"; 
 
 import { mapGetters } from "vuex";
-import { USER_INFOR } from "@/constants";
+import { TOKEN } from "@/constants";
 import { mapActions } from "vuex";
 
 export default {
@@ -35,16 +35,23 @@ export default {
     Footer
   },
     async created() {
-    const user = JSON.parse(localStorage.getItem(USER_INFOR));
-    if(!user) {
-      this.loading = true;
+    // const user = JSON.parse(localStorage.getItem(TOKEN));
+    if(localStorage.getItem(`${TOKEN}`)===null) {
+      this.setIsLogged(false)
     }
-    await this.login(user);
-    this.loading = false;
+    else {
+      this.setIsLogged(true)
+    }
+    // if(!user) {
+    //   this.loading = true;
+    //   this.setIsLogged(false);
+    // }
+    // else {
+    //   this.setIsLogged(true)
+    // }
   },
-
   methods: {
-    ...mapActions(["login"])
+    ...mapActions(["login", "setIsLogged"])
   },
   computed: {
     ...mapGetters(["getIsLogged"])

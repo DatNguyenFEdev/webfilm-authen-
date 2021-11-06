@@ -34,7 +34,7 @@
           <!-- <div class="form-group">
                         <a href="#">Đăng nhập bằng google</a>
           </div>-->
-          <input type="submit" value="Đăng nhập" />
+          <input type="submit" value="Login" />
           <p>
             Don't have an account?
             <span @click="isLogin=false">Register</span>
@@ -72,7 +72,7 @@
               v-model="registerForm.confirmPassword"
             />
           </div>
-          <button type="submit">Đăng kí</button>
+          <input type="submit" value="Register"/>
           <p>
             Have an account?
             <span @click="isLogin=true">Login</span>
@@ -126,8 +126,8 @@ export default {
     },
 
     async handleSubmitFormLogin() {
-      await login(this.loginForm);
-      this.setIsLogged(true);
+        await login(this.loginForm);
+        this.setIsLogged(true);
     }
   }
 };

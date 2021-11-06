@@ -124,7 +124,7 @@ export default {
   grid-gap: 20px 10px;
 }
 .itemMovie {
-  height: 400px;
+  padding-bottom: 20px;
   background: rgb(48, 46, 46);
   border: 1px solid rgba(0, 0, 0, 0.041);
   border-radius: 4px;
@@ -138,7 +138,7 @@ export default {
 .thumb {
   background: #999;
   width: 100%;
-  height: 300px;
+  height: auto;
   max-height: 270px;
   overflow-y: hidden;
   background: #ccc;
@@ -180,5 +180,23 @@ li {
 .c-sliding-pagination {
   text-align: center;
   margin: 1.5em 0;
+}
+@media screen and (max-width:1024px) {
+  .listMovie {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px 10px;
+}
+}
+@media screen and (max-width:767px) {
+  .listMovie {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px 10px;
+}
+}
+@media screen and (max-width:480px) {
+  .listMovie {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 10px;
+}
 }
 </style>
