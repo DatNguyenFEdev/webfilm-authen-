@@ -107,7 +107,6 @@ export default {
   async created() {
     
     const filmId = this.$route.params.film_id;
-    console.log(filmId);
     this.filmId = filmId;
     // call api get detail film
     const urlDetaiFilm =
@@ -119,7 +118,6 @@ export default {
       "&language=en-US";
     const getDetailFilm = await axios.get(urlDetaiFilm);
     this.detailFilm = getDetailFilm.data;
-    console.log(this.detailFilm)
   },
   mounted() {
     // this.filmId = this.$route.params.film_id;
