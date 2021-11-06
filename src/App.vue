@@ -9,7 +9,7 @@ import { mapActions } from "vuex";
 import {TOKEN} from "@/constants"
 export default {
   methods: {
-    ...mapActions(["login", "setIsLogged"])
+    ...mapActions(["setIsLogged"])
   },
   created() {
     if(localStorage.getItem(`${TOKEN}`)===null) {
